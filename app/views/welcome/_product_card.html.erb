@@ -1,10 +1,10 @@
 
-<div class="row">
-  <div class="card col s6">
+
+  <div class="card col s6" id=<%= product[:id] %>>
       <div class="card-image waves-effect waves-block waves-light">
         <img class="activator" src="images/office.jpg">
       </div>
-      <div class="card-content">
+      <div class="card-content" data-quantity=<%= product[:quanity_on_hand] %>>
         <span class="card-title activator grey-text text-darken-4"><%= product[:name] %><i class="material-icons right">more_vert</i></span>
         <p><a href="#">Quantity: <%= product[:quanity_on_hand] %></a></p>
         <p><a href="#">Price: <%= product[:base_price] %></a></p>
@@ -13,11 +13,11 @@
         <p><a href="#">Description: <%= product[:description] %></a></p>
         <p><a href="#">Other Attributes: <%= product[:other_attributes] %></a></p>
       <div class="right">
-        <button id="create">Create Product</button>
+        <button id="create" data-product-id=<%= product[:id] %>>Create Product</button>
         <br />
         <button id="destroy" data-product-id=<%= product[:id] %>>Delete Product</button>
         <br />
-        <button id="edit">Purchase</button>
+        <button id="edit" data-product-id=<%= product[:id] %>>Purchase</button>
         <br />
       </div>
 
@@ -38,4 +38,3 @@
           </form>
       </div>
     </div>
-</div>

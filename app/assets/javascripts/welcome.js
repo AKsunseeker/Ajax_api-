@@ -66,6 +66,22 @@ $(document).ready(function(){
     });
   });
 
+  $(document).on('click', '#edit', function(){
+    var button = $(this).parents()[1];
+    var purchased_quantity = $(button).data('quantity') -1;
+    $.ajax(baseUrl + '/' + $(this).data('product-id'), {
+      type: 'PUT',
+      data: {product:{quanity_on_hand: purchased_quantity}},
+      success: function(data){
+        $('#' + data.product.id).find('p')[0].innerHTML = '<a href="#">Quantity: ' + data.product.quanity_on_hand + '</a>';
+      },
+      error: function(data){
+        console.log(data)
+      }
+
+    });
+  });
+
 
 
 
