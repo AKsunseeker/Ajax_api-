@@ -1,0 +1,41 @@
+
+<div class="row">
+  <div class="card col s6">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" src="images/office.jpg">
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4"><%= product[:name] %><i class="material-icons right">more_vert</i></span>
+        <p><a href="#">Quantity: <%= product[:quanity_on_hand] %></a></p>
+        <p><a href="#">Price: <%= product[:base_price] %></a></p>
+        <p><a href="#">Product Color: <%= product[:color] %></a></p>
+        <p><a href="#">Product Weight: <%= product[:weight] %></a></p>
+        <p><a href="#">Description: <%= product[:description] %></a></p>
+        <p><a href="#">Other Attributes: <%= product[:other_attributes] %></a></p>
+      <div class="right">
+        <button id="create">Create Product</button>
+        <br />
+        <button id="destroy" data-product-id=<%= product[:id] %>>Delete Product</button>
+        <br />
+        <button id="edit">Purchase</button>
+        <br />
+      </div>
+
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+        <div>
+          <form id="create_product_form" action="/products" method="POST" class="hide">
+            <input placeholder="Product Name" type="text" id="product_name" name="product[name]">
+            <input placeholder="Price" type="text" id="product_price" name="product[price]">
+            <input placeholder="Color" type="text" id="product_color" name="product[color]">
+            <input placeholder="Weight" type="text" id="product_weight" name="product[weight]">
+            <input placeholder="Description" type="text" id="product_description" name="product[description]">
+            <input placeholder="Product Weight" type="text" id="product_weight" name="product[weight]">
+            <input placeholder="Quantity" type="number" id="quantity_on_hand" name="product[quantity_on_hand]">
+          
+            <input type="submit" id="edit_product_button" value="Create Product">
+          </form>
+      </div>
+    </div>
+</div>
